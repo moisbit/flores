@@ -308,5 +308,25 @@
       </div>
     </div>
     <script src="main.js"></script>
+
+  <audio id="backgroundAudio" loop muted>
+      <source src="img/Floricienta.mp3" type="audio/mpeg">
+      Tu navegador no soporta la etiqueta de audio.
+  </audio>
+
+  <script>
+      const audio = document.getElementById('backgroundAudio');
+
+      // Al tocar la pantalla
+      document.addEventListener('click', () => {
+          if (audio.paused) {
+              audio.muted = false; // Quita el silencio
+              audio.play().catch(error => {
+                  console.log("Error al reproducir el audio:", error);
+              });
+          }
+      });
+  </script>
+    
   </body>
 </html>
